@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+		  http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5">
+    <context-param>
+        <param-name>fileRoot</param-name>
+        <param-value>C:\root</param-value>
+    </context-param>
+    <context-param>
+        <param-name>tempDir</param-name>
+        <param-value>C:\temp</param-value>
+    </context-param>
+    <servlet>
+        <servlet-name>fs</servlet-name>
+        <servlet-class>com.project.file.HttpFileServer</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>download</servlet-name>
+        <servlet-class>com.project.file.ZipDownloadServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>zipupload</servlet-name>
+        <servlet-class>com.project.file.ZipUploadServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>delete</servlet-name>
+        <servlet-class>com.project.file.FileDeleteServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>logout</servlet-name>
+        <servlet-class>com.project.file.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>upload</servlet-name>
+        <servlet-class>com.project.file.FileUploadServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>fs</servlet-name>
+        <url-pattern>/servlet/fs/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>download</servlet-name>
+        <url-pattern>/servlet/download/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>zipupload</servlet-name>
+        <url-pattern>/servlet/zipupload/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>delete</servlet-name>
+        <url-pattern>/servlet/delete/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>logout</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>upload</servlet-name>
+        <url-pattern>/servlet/upload/*</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>locate</filter-name>
+        <filter-class>com.project.file.LocateFileFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>locate</filter-name>
+        <url-pattern>/servlet/*</url-pattern>
+    </filter-mapping>
+
+    <welcome-file-list>
+        <welcome-file>index.htm</welcome-file>
+    </welcome-file-list>
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <form-login-config>
+            <form-login-page>/login.jsp</form-login-page>
+            <form-error-page>/loginfail.jsp</form-error-page>
+        </form-login-config>
+    </login-config>
+    <security-constraint>
+        <display-name>manager, viewer</display-name>
+        <web-resource-collection>
+            <web-resource-name>files</web-resource-name>
+            <url-pattern>/servlet/fs/*</url-pattern>
+            <url-pattern>/servlet/download/*</url-pattern>
+            <url-pattern>/servlet/upload/*</url-pattern>
+            <url-pattern>/servlet/zipupload/*</url-pattern>
+            <http-method>GET</http-method>
+            <http-method>POST</http-method>
+            <http-method>PUT</http-method>
+            <http-method>DELETE</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>manager</role-name>
+            <role-name>viewer</role-name>
+        </auth-constraint>
+        <user-data-constraint>
+            <transport-guarantee>NONE</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
+
+</web-app>

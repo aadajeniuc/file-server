@@ -1,0 +1,25 @@
+<component name="libraryTable">
+  <library name="htmlunit">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/htmlunit/cssparser-0.9.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/htmlunit/commons-lang3-3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/htmlunit/commons-io-2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/htmlunit/commons-codec-1.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/htmlunit/commons-collections-3.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/htmlunit/httpcore-4.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/htmlunit/commons-logging-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/htmlunit/xalan-2.7.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/htmlunit/htmlunit-2.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/htmlunit/xml-apis-1.3.04.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/htmlunit/xercesImpl-2.9.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/htmlunit/httpmime-4.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/htmlunit/serializer-2.7.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/htmlunit/sac-1.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/htmlunit/httpclient-4.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/htmlunit/nekohtml-1.9.16.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/htmlunit/htmlunit-core-js-2.10.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

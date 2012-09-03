@@ -1,0 +1,4 @@
+<%
+
+	String root = request.getContextPath() + '/';
+%>
